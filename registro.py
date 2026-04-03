@@ -9,7 +9,7 @@ while True:
         print("Registro finalizado.")
         break
     
-    file.write(nuevo_router + "\n")
+    file.write("Route: " +nuevo_route + " - Estado: Activo\n"
     print(f"Router {nuevo_router} guardado.")
 
 file.close()
