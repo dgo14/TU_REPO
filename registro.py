@@ -1,15 +1,19 @@
-# Abrimos el archivo en modo 'a' (append) para no borrar lo anterior
 file = open("equipos.txt", "a")
 
-print("--- Registro de Routers ---")
+print("--- SISTEMA DE INVENTARIO DEVASC ---")
+
 while True:
-    nuevo_router = input("Ingresa el nombre del router (o 'salir' para terminar): ")
-    
-    if nuevo_router.lower() == "salir":
-        print("Registro finalizado.")
+    nombre = input("Nombre del dispositivo (o 'salir'): ")
+    if nombre.lower() == "salir":
         break
+        
+    ip = input(f"Ingrese la IP para {nombre}: ")
     
-    file.write("Route: " +nuevo_route + " - Estado: Activo\n"
-    print(f"Router {nuevo_router} guardado.")
+    # Creamos una línea con formato profesional
+    linea = f"Dispositivo: {nombre} | IP: {ip} | Estado: Activo\n"
+    
+    file.write(linea)
+    print(">>> Datos guardados localmente.\n")
 
 file.close()
+print("Proceso finalizado. No olvides subir tus cambios a GitHub.")
